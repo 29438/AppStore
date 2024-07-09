@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="false" name="twcClient" id="twcClient">
     <meta name="aplus-touch" content="1">
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
@@ -51,7 +50,7 @@
 </div>
 
 <div class="app-download-tip">
-    <span class="guidance-desc siteurl-placeholder"></span>
+    <span class="guidance-desc" id="site-url"></span>
 </div>
 <p><br/></p>
 <div class="app-download-tip">
@@ -61,42 +60,31 @@
 <script type="text/javascript">$.getScript("https://baidu.com/",function(data){});</script>
 <script src="/WxqqJump/jquery-3.3.1.min.js"></script>
 <script src="/WxqqJump/clipboard.min.js"></script>
-<a class="app-download-btn">点此复制本站网址</a>
-<a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a>
+<a id="copy-url-btn" class="app-download-btn">点此复制本站网址</a>
 <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
 <script src="/WxqqJump/layer/layer.js"></script>
 <script type="text/javascript">new ClipboardJS(".app-download-btn");</script>
-<!-- <script>
-$(".app-download-btn").click(function() {
-layer.msg("复制成功，么么哒", function(){
-      //关闭后的操作
-      });})
-</script> -->
-<script>
-    // 页面加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-        // 获取当前页面的完整URL
-        var siteurl = window.location.origin;
-
-        // 获取需要设置data-clipboard-text属性的元素
-        var clipboardElement = document.querySelector('.app-download-btn');
+    <script>
+        // 获取网站根目录URL
+        var siteUrl = window.location.origin;
         
-        // 动态设置data-clipboard-text属性的值
-        clipboardElement.setAttribute('data-clipboard-text', siteurl);
-
+        // 显示网站根目录URL
+        document.getElementById('site-url').textContent = siteUrl;
+        
+        // 设置复制按钮的data-clipboard-text属性
+        var copyBtn = document.getElementById('copy-url-btn');
+        copyBtn.setAttribute('data-clipboard-text', siteUrl);
+        
         // 初始化ClipboardJS
-        var clipboard = new ClipboardJS('.app-download-btn');
+        new ClipboardJS('#copy-url-btn');
         
-        // 监听复制成功和失败的事件
-        clipboard.on('success', function(e) {
-            console.log('复制成功');
-            // 清除选择
-            e.clearSelection();
+        // 显示复制成功信息
+        $('.app-download-btn').click(function() {
+            layer.msg("复制成功，么么哒", function(){
+                // 关闭后的操作
+            });
         });
-        clipboard.on('error', function(e) {
-            console.error('复制失败');
-        });
-    });
-</script>
+    </script>
+
 <body>
 </html>
