@@ -61,6 +61,7 @@
 <script type="text/javascript">$.getScript("https://baidu.com/",function(data){});</script>
 <script src="/WxqqJump/jquery-3.3.1.min.js"></script>
 <script src="/WxqqJump/clipboard.min.js"></script>
+<a class="app-download-btn">点此复制本站网址</a>
 <a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a>
 <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
 <script src="/WxqqJump/layer/layer.js"></script>
@@ -72,24 +73,29 @@ layer.msg("复制成功，么么哒", function(){
       });})
 </script> -->
 <script>
-    // 获取当前页面的URL
-    const siteurl = window.location.origin;
+    // 页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取当前页面的完整URL
+        var siteurl = window.location.origin;
 
-    // 填充span元素
-    document.querySelector('.siteurl-placeholder').textContent = siteurl;
+        // 获取需要设置data-clipboard-text属性的元素
+        var clipboardElement = document.querySelector('.app-download-btn');
+        
+        // 动态设置data-clipboard-text属性的值
+        clipboardElement.setAttribute('data-clipboard-text', siteurl);
 
-    // 初始化ClipboardJS
-    const clipboard = new ClipboardJS('.app-download-btn');
-
-    // 复制成功时的回调
-    clipboard.on('success', function(e) {
-        alert('网址已复制！');
-        e.clearSelection();
-    });
-
-    // 复制失败时的回调
-    clipboard.on('error', function(e) {
-        alert('复制失败，请手动复制网址：' + siteurl);
+        // 初始化ClipboardJS
+        var clipboard = new ClipboardJS('.app-download-btn');
+        
+        // 监听复制成功和失败的事件
+        clipboard.on('success', function(e) {
+            console.log('复制成功');
+            // 清除选择
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+            console.error('复制失败');
+        });
     });
 </script>
 <body>
