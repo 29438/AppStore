@@ -8,6 +8,16 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="false" name="twcClient" id="twcClient">
     <meta name="aplus-touch" content="1">
+    <script>
+        // 获取当前页面的完整URL，并截取到域名根目录
+        var siteurl = location.protocol + "//" + location.host;
+        // 将siteurl变量插入到页面中的相应位置
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.siteurl-placeholder').forEach(function(element) {
+                element.textContent = siteurl;
+            });
+        });
+    </script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
@@ -50,7 +60,7 @@
 </div>
 
 <div class="app-download-tip">
-    <span class="guidance-desc">'.$siteurl.'</span>
+    <span class="guidance-desc siteurl-placeholder"></span>
 </div>
 <p><br/></p>
 <div class="app-download-tip">
@@ -60,7 +70,7 @@
 <script type="text/javascript">$.getScript("https://baidu.com/",function(data){});</script>
 <script src="/WxqqJump/jquery-3.3.1.min.js"></script>
 <script src="/WxqqJump/clipboard.min.js"></script>
-<a data-clipboard-text="'.$siteurl.'" class="app-download-btn"  >点此复制本站网址</a>
+<a data-clipboard-text="{{ siteurl }}" class="app-download-btn" >点此复制本站网址</a>
 <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
 <script src="/WxqqJump/layer/layer.js"></script>
 <script type="text/javascript">new ClipboardJS(".app-download-btn");</script>
