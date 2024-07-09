@@ -8,6 +8,16 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="false" name="twcClient" id="twcClient">
     <meta name="aplus-touch" content="1">
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检测是否在微信或QQ浏览器中打开
+            if (!/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
+                // 不是微信或QQ环境，则跳转到网站根目录
+                window.location.replace(window.location.protocol + "//" + window.location.host);
+            }
+        });
+    </script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
