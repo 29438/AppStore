@@ -1,3 +1,6 @@
+<?php
+ require_once('WxqqJump/WxqqJump.php');
+
 <html dir="ltr" lang="zh-CN">
 
 <head>
@@ -1045,3 +1048,4 @@
 </body>
 
 </html>
+?>
