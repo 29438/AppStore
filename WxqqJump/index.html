@@ -8,6 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="false" name="twcClient" id="twcClient">
     <meta name="aplus-touch" content="1">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
@@ -60,8 +61,7 @@
 <script type="text/javascript">$.getScript("https://baidu.com/",function(data){});</script>
 <script src="/WxqqJump/jquery-3.3.1.min.js"></script>
 <script src="/WxqqJump/clipboard.min.js"></script>
-<button id="copyUrlBtn">点此复制本站网址</button>
-<!-- <a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a> -->
+<a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a>
 <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
 <script src="/WxqqJump/layer/layer.js"></script>
 <script type="text/javascript">new ClipboardJS(".app-download-btn");</script>
@@ -73,17 +73,13 @@ layer.msg("复制成功，么么哒", function(){
 </script> -->
 <script>
     // 获取当前页面的URL
-    const siteurl = window.location.href;
+    const siteurl = window.location.origin;
 
-    // 将URL填充到span元素中
+    // 填充span元素
     document.querySelector('.siteurl-placeholder').textContent = siteurl;
 
-    // 初始化复制行为
-    const clipboard = new ClipboardJS('#copyUrlBtn', {
-        text: function() {
-            return siteurl;
-        }
-    });
+    // 初始化ClipboardJS
+    const clipboard = new ClipboardJS('.app-download-btn');
 
     // 复制成功时的回调
     clipboard.on('success', function(e) {
