@@ -8,34 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="false" name="twcClient" id="twcClient">
     <meta name="aplus-touch" content="1">
-    <script>
-        // 获取当前页面的完整URL，并截取到域名根目录
-        var siteurl = location.protocol + "//" + location.host;
-                // 初始化ClipboardJS，监听复制按钮
-                new ClipboardJS('.app-download-btn', {
-            text: function() {
-                return siteurl;
-            }
-        });
-
-        // 监听复制成功的事件
-        document.addEventListener('DOMContentLoaded', function() {
-            var clipboard = new ClipboardJS('.app-download-btn');
-            clipboard.on('success', function(e) {
-                console.log('复制成功');
-                e.clearSelection();
-            });
-            clipboard.on('error', function(e) {
-                console.error('复制失败');
-            });
-        });
-        // 将siteurl变量插入到页面中的相应位置
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.siteurl-placeholder').forEach(function(element) {
-                element.textContent = siteurl;
-            });
-        });
-    </script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
@@ -88,16 +60,41 @@
 <script type="text/javascript">$.getScript("https://baidu.com/",function(data){});</script>
 <script src="/WxqqJump/jquery-3.3.1.min.js"></script>
 <script src="/WxqqJump/clipboard.min.js"></script>
-<a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a>
+<button id="copyUrlBtn">点此复制本站网址</button>
+<!-- <a data-clipboard-text="{{ siteurl }}" class="app-download-btn">点此复制本站网址</a> -->
 <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
 <script src="/WxqqJump/layer/layer.js"></script>
 <script type="text/javascript">new ClipboardJS(".app-download-btn");</script>
-<script>
+<!-- <script>
 $(".app-download-btn").click(function() {
 layer.msg("复制成功，么么哒", function(){
       //关闭后的操作
       });})
-</script>
+</script> -->
+<script>
+    // 获取当前页面的URL
+    const siteurl = window.location.href;
 
+    // 将URL填充到span元素中
+    document.querySelector('.siteurl-placeholder').textContent = siteurl;
+
+    // 初始化复制行为
+    const clipboard = new ClipboardJS('#copyUrlBtn', {
+        text: function() {
+            return siteurl;
+        }
+    });
+
+    // 复制成功时的回调
+    clipboard.on('success', function(e) {
+        alert('网址已复制！');
+        e.clearSelection();
+    });
+
+    // 复制失败时的回调
+    clipboard.on('error', function(e) {
+        alert('复制失败，请手动复制网址：' + siteurl);
+    });
+</script>
 <body>
 </html>
