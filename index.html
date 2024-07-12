@@ -225,18 +225,9 @@
 
 
 								<style>
-									*:focus {
+									* {
 										outline: none;
-									}
-
-									/* 保留无障碍性，只针对不需要焦点样式的元素 */
-									a:focus,
-									button:focus,
-									input:focus,
-									textarea:focus,
-									select:focus {
-										outline: 2px solid #000;
-										/* 保持默认焦点样式或自定义 */
+										user-select: none;
 									}
 
 									.ember158939,
