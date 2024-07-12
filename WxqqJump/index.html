@@ -18,6 +18,30 @@
             }
         });
     </script>
+    	<script>
+            document.onkeydown = function (event) {
+                // 检查F12按键
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                // 检查Ctrl + Shift + I 组合键
+                if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 73) {
+                    return false;
+                }
+                // 检查Ctrl + Shift + C 组合键
+                if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 67) {
+                    return false;
+                }
+                // 检查Ctrl + Shift + J 组合键
+                if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 74) {
+                    return false;
+                }
+                // 检查Ctrl + U 组合键
+                if ((event.ctrlKey || event.metaKey) && event.keyCode == 85) {
+                    return false;
+                }
+            };
+        </script>
     <style>
         body,html{width:100%;height:100%}
         *{margin:0;padding:0}
