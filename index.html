@@ -18,6 +18,30 @@
             }
         });
     </script> -->
+	<script>
+		document.onkeydown = function(event) {
+			// 检查F12按键
+			if (event.keyCode == 123) {
+				return false;
+			}
+			// 检查Ctrl + Shift + I 组合键
+			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 73) {
+				return false;
+			}
+			// 检查Ctrl + Shift + C 组合键
+			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 67) {
+				return false;
+			}
+			// 检查Ctrl + Shift + J 组合键
+			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 74) {
+				return false;
+			}
+			// 检查Ctrl + U 组合键
+			if ((event.ctrlKey || event.metaKey) && event.keyCode == 85) {
+				return false;
+			}
+		};
+	</script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // 检查是否在微信或QQ浏览器中打开
@@ -39,7 +63,7 @@
 
 </head>
 
-<body class="no-js no-touch globalnav-scrim">
+<body class="no-js no-touch globalnav-scrim"  oncontextmenu="return false;">
 	<div id="globalheader">
 		<nav id="globalnav" lang="zh-CN" dir="ltr" aria-label="全部网页"
 			data-analytics-element-engagement-start="globalnav:onFlyoutOpen"
