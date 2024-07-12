@@ -9,7 +9,7 @@
 	<script id="perfkit">
 		window.initialPageRequestTime = +new Date();
 	</script>
-    <!-- <script>
+	<!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             // 检查是否在微信或QQ浏览器中打开
             if (/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
@@ -19,7 +19,7 @@
         });
     </script> -->
 	<script>
-		document.onkeydown = function(event) {
+		document.onkeydown = function (event) {
 			// 检查F12按键
 			if (event.keyCode == 123) {
 				return false;
@@ -42,15 +42,15 @@
 			}
 		};
 	</script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 检查是否在微信或QQ浏览器中打开
-            if (/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
-                // 如果是微信或QQ环境，则跳转到特定页面
-                window.location.href = 'WxqqJump/index.html';
-            }
-        });
-    </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// 检查是否在微信或QQ浏览器中打开
+			if (/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
+				// 如果是微信或QQ环境，则跳转到特定页面
+				window.location.href = 'WxqqJump/index.html';
+			}
+		});
+	</script>
 	<link rel="stylesheet" type="text/css" href="css/globalheader.css" data-global-elements-nav-styles="">
 	<link rel="stylesheet" type="text/css" href="css/footer.css" data-global-elements-footer-styles="">
 	<link integrity="" rel="stylesheet" href="css/web-experience-app-real.css">
@@ -63,7 +63,7 @@
 
 </head>
 
-<body class="no-js no-touch globalnav-scrim"  oncontextmenu="return false;">
+<body class="no-js no-touch globalnav-scrim" oncontextmenu="return false;">
 	<div id="globalheader">
 		<nav id="globalnav" lang="zh-CN" dir="ltr" aria-label="全部网页"
 			data-analytics-element-engagement-start="globalnav:onFlyoutOpen"
@@ -225,6 +225,20 @@
 
 
 								<style>
+									*:focus {
+										outline: none;
+									}
+
+									/* 保留无障碍性，只针对不需要焦点样式的元素 */
+									a:focus,
+									button:focus,
+									input:focus,
+									textarea:focus,
+									select:focus {
+										outline: 2px solid #000;
+										/* 保持默认焦点样式或自定义 */
+									}
+
 									.ember158939,
 									#ember158939::before {
 										width: 246px;
@@ -326,7 +340,8 @@
 										</ul>
 									</li><br>
 
-									<a href="https://www.123pan.com/s/DHjLVv-udmhH.html" target="_blank" class="button">免费下载</a>
+									<a href="https://www.123pan.com/s/DHjLVv-udmhH.html" target="_blank"
+										class="button">免费下载</a>
 								</ul>
 
 							</header>
