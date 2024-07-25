@@ -5,30 +5,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="applicable-device" content="pc,mobile">
-
-	<script>
-		document.onkeydown = function (event) {
-			// 检查F12按键
-			if (event.keyCode == 123) {
-				return false;
-			}
-			// 检查Ctrl + Shift + I 组合键
-			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 73) {
-				return false;
-			}
-			// 检查Ctrl + Shift + C 组合键
-			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 67) {
-				return false;
-			}
-			// 检查Ctrl + Shift + J 组合键
-			if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.keyCode == 74) {
-				return false;
-			}
-			// 检查Ctrl + U 组合键
-			if ((event.ctrlKey || event.metaKey) && event.keyCode == 85) {
-				return false;
-			}
-		};
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查是否在微信或QQ浏览器中打开
+            if (/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
+                // 如果是微信或QQ环境，则跳转到特定页面
+                window.location.href = 'WxqqJump/index.html';
+            }
+        });
+    </script> -->
+	<script id="perfkit">
+		window.initialPageRequestTime = +new Date();
 	</script>
 	<link rel="stylesheet" type="text/css" href="css/globalheader.css" data-global-elements-nav-styles="">
 	<link rel="stylesheet" type="text/css" href="css/footer.css" data-global-elements-footer-styles="">
@@ -38,11 +25,11 @@
 	<title>MBox-全网影视免费看</title>
 	<meta name="keywords" content="MBox">
 	<meta name="description" content="全网影视免费看">
-	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="https://app.cpddd.tk/img/favicon.ico" type="image/x-icon">
 
 </head>
 
-<body class="no-js no-touch globalnav-scrim" oncontextmenu="return false;">
+<body class="no-js no-touch globalnav-scrim">
 	<div id="globalheader">
 		<nav id="globalnav" lang="zh-CN" dir="ltr" aria-label="全部网页"
 			data-analytics-element-engagement-start="globalnav:onFlyoutOpen"
@@ -86,7 +73,6 @@
 				globalnav-item-menu
 				
 			">
-
 					<li class="globalnav-item globalnav-bag" id="globalnav-bag" data-analytics-region="bag">
 						<div class="globalnav-bag-wrapper"><a id="globalnav-menubutton-link-bag" href="#"
 								aria-label="打开购物袋" data-globalnav-item-name="bag" data-topnav-flyout-trigger-regular=""
@@ -195,7 +181,7 @@
 								style="--background-color: #fffef4;" id="ember158939">
 
 								<source
-									srcset="img/mbox1.png 246w, img/mbox1.png 217w, img/mbox1.png/230x0w.webp 230w, img/mbox1.png 492w, img/mbox1.png/434x0w.webp 434w, img/mbox1.png 460w"
+									srcset="https://app.cpddd.tk/img/mbox1.png 246w, https://app.cpddd.tk/img/mbox1.png 217w, https://app.cpddd.tk/img/mbox1.png/230x0w.webp 230w, https://app.cpddd.tk/img/mbox1.png 492w, https://app.cpddd.tk/img/mbox1.png/434x0w.webp 434w, https://app.cpddd.tk/img/mbox1.png 460w"
 									sizes="(max-width: 734px) 246px, (min-width: 735px) and (max-width: 1068px) 217px, 230px"
 									type="image/webp">
 
@@ -204,14 +190,6 @@
 
 
 								<style>
-									a {
-										text-decoration: none;
-									}
-									* {
-										outline: none;
-										user-select: none;
-									}
-
 									.ember158939,
 									#ember158939::before {
 										width: 246px;
@@ -265,7 +243,7 @@
 								</h2>
 
 								<h2 class="product-header__identity app-header__identity">
-									<a href="#" class="link" dir="auto">
+									<a href="https://cpddd.tk" class="link" dir="auto">
 										CP
 									</a>
 								</h2>
@@ -312,9 +290,7 @@
 												提供 App 内购买项目</li>
 										</ul>
 									</li><br>
-
-									<a href="https://www.123pan.com/s/DHjLVv-lkmhH.html" target="_blank"
-										class="button">免费下载</a>
+									<button class="button" onclick="location.href='/app/MBox_1.1.1.0.apk'">免费下载</button>
 								</ul>
 
 							</header>
@@ -906,7 +882,7 @@
 						</div>
 					</div>
 
-					<p class="app-privacy__learn-more">隐私处理规范可能基于你使用的功能或你的年龄等因素而有所不同。<a href="#">了解更多</a>
+					<p class="app-privacy__learn-more">隐私处理规范可能基于你使用的功能或你的年龄等因素而有所不同。<a href="https://cpddd.tk">了解更多</a>
 					</p>
 				</section>
 
@@ -1004,7 +980,7 @@
 								<li class="link-list__item link-list__item--a">
 									<a class="link icon icon-after icon-external"
 										data-metrics-click="{&quot;actionDetails&quot;:{&quot;type&quot;:&quot;developer&quot;},&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;@@url@@&quot;,&quot;targetType&quot;:&quot;link&quot;,&quot;targetId&quot;:&quot;@@id@@&quot;}"
-										href="#">
+										href="https://cpddd.tk">
 										开发人员网站
 									</a>
 								</li>
